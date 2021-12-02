@@ -29,9 +29,12 @@ export default function App() {
     setContacts([...contacts, item]);
   };
 
-  const changeFilter = useCallback((e) => {
-    setFilter(e.target.value);
-  }, []);
+  const changeFilter = useCallback(
+    (e) => {
+      setFilter(e.target.value);
+    },
+    [setFilter]
+  );
 
   const filteredContacts = useMemo(() => {
     const normalizedFilter = filter.toLowerCase();
